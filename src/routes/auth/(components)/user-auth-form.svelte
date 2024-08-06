@@ -3,6 +3,7 @@
   import { Input } from "$lib/components/ui/input";
   import { Label } from "$lib/components/ui/label";
   import { cn } from "$lib/utils.js";
+  import { Github, LoaderCircle } from "lucide-svelte";
 
   let className: string | undefined | null = undefined;
   export { className as class };
@@ -32,9 +33,21 @@
           disabled={isLoading}
         />
       </div>
+      <div class="grid gap-1">
+        <Label class="sr-only" for="email">Password</Label>
+        <Input
+          id="password"
+          placeholder="6-20 characters"
+          type="password"
+          autocapitalize="none"
+          autocomplete="password"
+          autocorrect="off"
+          disabled={isLoading}
+        />
+      </div>
       <Button type="submit" disabled={isLoading}>
         {#if isLoading}
-          <!-- <Icons.spinner class="mr-2 h-4 w-4 animate-spin" /> -->
+          <LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
         {/if}
         Sign In with Email
       </Button>
@@ -52,9 +65,9 @@
   </div>
   <Button variant="outline" type="button" disabled={isLoading}>
     {#if isLoading}
-      <!-- <Icons.spinner class="mr-2 h-4 w-4 animate-spin" /> -->
+      <LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
     {:else}
-      <!-- <Icons.gitHub class="mr-2 h-4 w-4" /> -->
+      <Github class="mr-2 h-4 w-4" />
     {/if}
     GitHub
   </Button>
