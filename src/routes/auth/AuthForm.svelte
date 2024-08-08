@@ -12,12 +12,13 @@
 </script>
 
 <div class={cn("grid gap-6", className)} {...$$restProps}>
-  <form action="/auth" on:submit={() => (isLoading = true)}>
+  <form action="/auth" method="post">
     <div class="grid gap-2">
       <div class="grid gap-1">
         <Label class="sr-only" for="username">Username</Label>
         <Input
           id="username"
+          name="username"
           placeholder="用户名"
           type="text"
           autocapitalize="none"
@@ -30,6 +31,7 @@
         <Label class="sr-only" for="email">Password</Label>
         <Input
           id="password"
+          name="password"
           placeholder="6-20 characters"
           type="password"
           autocapitalize="none"

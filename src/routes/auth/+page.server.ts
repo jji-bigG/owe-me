@@ -10,8 +10,6 @@ export const actions: Actions = {
     const formData = await event.request.formData();
     const username = formData.get("username");
     const password = formData.get("password");
-    console.log("first");
-    console.log(username, password);
 
     if (
       typeof username !== "string" ||

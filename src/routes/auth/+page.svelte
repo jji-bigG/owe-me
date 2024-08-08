@@ -54,7 +54,9 @@
           will be validated for sign in.
         </p>
       </div>
+
       <UserAuthForm />
+
       <p class="text-muted-foreground px-8 text-center text-sm">
         By clicking continue, you agree to our
         <a
